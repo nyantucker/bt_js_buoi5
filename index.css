@@ -5,7 +5,7 @@
     font-family: 'Tektur', cursive;
 }
 body {
-    background: url(./img/17973908.jpg);
+    background: url(./img/bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -16,7 +16,7 @@ body {
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
-    background: url(./img/rm222batch2-mind-03.jpg);
+    background: url(./img/bg2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
