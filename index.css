@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Tektur', cursive;
+}
+body {
+    background: linear-gradient(to right, #d3cce3, #e9e4f0);
+}
+#from-ket-noi {
+    display: none;
+}
+.calc_box {
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background: linear-gradient(to right, #c9d6ff, #e2e2e2);
+    background-size: 200%;
+}
+.content {
+    padding: 50px;
+    background: linear-gradient(to right, #e0eafc, #cfdef3);
+}
+.nav li {
+    border-radius: 50px;
+    overflow: hidden;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.nav-link {
+    font-size: 20px;
+    padding: 10px 30px;
+}
+.nav-pills .nav-link.active {
+    color: rgb(204, 162, 123);
+    background: linear-gradient(to right, #a8ff78, #78ffd6);
+}
+.tab-content {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+h1 {
+    text-align: center;
+    color: #020b5c;
+}
+.form-group input {
+    width: 50%;
+    margin-top: 10px;
+}
+.form-group select {
+    width: 50%;
+    margin-top: 10px;
+}
+.form-group label {
+    margin-top: 10px;
+}
+h3 {
+    margin-top: 10px;
+}
