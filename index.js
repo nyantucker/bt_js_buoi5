@@ -31,10 +31,11 @@ function tinhTienDien() {
     } else if (dienTieuthu>350) {
         tiendien = 50*500 + 50*650 + 100*850 + 150*1100 + (dienTieuthu-350)*1300
     }
-    document.getElementById("tien-dien").innerHTML = `<h2 class="text-success">Tiền điện của bạn là: ${tiendien.toLocaleString()} VNĐ</h2>`
+    document.getElementById("tien-dien").innerHTML = `<h2 class="text-success">Tiền điện của anh/chị <mark>`+hoTen+`</mark> là: ${tiendien.toLocaleString()} VNĐ</h2>`
 }
 //BÀI 3: TÍNH THUẾ THU NHẬP CÁ NHÂN 
 function tinhThue () {
+    var hoTenThue = document.getElementById("ho-ten-thue").value;
     var thuNhap = document.getElementById("thu-nhap-nam").value*1;
     var soNguoi = document.getElementById("so-nguoi-phu-thuoc").value*1;
     var thuNhapChiuThue = thuNhap - 4e6 - soNguoi * 1.6e6 ;
@@ -54,12 +55,36 @@ function tinhThue () {
     } else if (thuNhapChiuThue <= 60e6) {
         tienThue = thuNhapChiuThue*0.05;
     } 
+
+
+    if (thuNhapChiuThue > 960e6) {
+        tienThueDemo = thuNhapChiuThue*0.35;
+    } else if (thuNhapChiuThue > 624e6) {
+        tienThueDemo = thuNhapChiuThue*0.3;
+    } else if (thuNhapChiuThue > 384e6) {
+        tienThueDemo = thuNhapChiuThue*0.25;
+    } else if (thuNhapChiuThue > 210e6) {
+        tienThueDemo = thuNhapChiuThue*0.2;
+    } else if (thuNhapChiuThue > 120e6) {
+        tienThueDemo = thuNhapChiuThue*0.15;
+    } else if (thuNhapChiuThue > 60e6) {
+        tienThueDemo = thuNhapChiuThue*0.1;
+    } else if (thuNhapChiuThue <= 60e6) {
+        tienThueDemo = thuNhapChiuThue*0.05;
+    } 
+
     if (tienThue>=0) {
-        document.getElementById("tien-thue").innerHTML = `<h2 class="text-success"> Tiền thuế của bạn là: ${tienThue.toLocaleString()} VNĐ</h2>`
+        document.getElementById("tien-thue").innerHTML = `<h2 class="text-success"> Tiền thuế của anh/chị <mark>`+hoTenThue+`</mark> là: ${tienThue.toLocaleString()} VNĐ <br> (Tính theo Demo: ${tienThueDemo.toLocaleString()} VNĐ)</h2>`
     } else {
         document.getElementById("tien-thue").innerHTML = `<h2 class="text-danger"> Thu nhập không hợp lệ</h2>`
     }
+
 }
+
+
+
+
+
 //BÀI 4: TÍNH TIỀN CÁP
 function soketnoi() {
     var loaiKhachHang = document.getElementById("loai-khach-hang").value;
@@ -118,5 +143,5 @@ function tinhTienCap() {
     } else if (loaiKhachHang="doanhnghiep" && soKetNoi > 10) {
         var tienCap = phiHoaDon + phiDichVu + phiCaoCap*soCaoCap +(soKetNoi-10)*5;
     }
-    document.getElementById("tien-cap").innerHTML = `<h2 class="text-success"> Số tiền cap phải trả: ${tienCap.toLocaleString()}$</h2>`
+    document.getElementById("tien-cap").innerHTML = `<h2 class="text-success"> Số tiền cáp phải trả: ${tienCap.toLocaleString()}$</h2>`
 }
